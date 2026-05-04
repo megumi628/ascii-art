@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII Art Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1><span class="bracket">[</span>ASCII<span class="bracket">]</span></h1>
+    <p>Image to ASCII Art</p>
+  </header>
+
+  <main>
+    <aside class="controls">
+
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="upload" accept="image/*">
+        <div>
+          <div class="upload-icon">⬡</div>
+          <p>Drop image or click to upload</p>
+          <small>PNG · JPG · GIF · WEBP</small>
+        </div>
+      </div>
+
+      <button id="cameraBtn">◉ Use Camera</button>
+
+      <hr>
+
+      <label>Width: <span id="widthDisplay">120</span></label>
+      <input type="range" id="width" min="40" max="300" value="120">
+
+      <label>Charset</label>
+      <input type="text" id="charset" value="@%#*+=-:. ">
+
+      <div class="presets">
+        <button class="preset active" data-set="@%#*+=-:. ">Default</button>
+        <button class="preset" data-set="█▓▒░ ">Blocks</button>
+      </div>
+
+      <label class="toggle-row">
+        Color <input type="checkbox" id="color">
+      </label>
+      <label class="toggle-row">
+        Invert <input type="checkbox" id="invert">
+      </label>
+
+    </aside>
+
+    <section class="output">
+      <div class="output-header">
+        <span id="outputMeta">—</span>
+        <div>
+          <button id="copyBtn">⊡ Copy</button>
+          <button id="downloadBtn">↓ Download</button>
+        </div>
+      </div>
+      <div class="output-box" id="outputBox">
+        <p id="placeholder">Upload an image to get started</p>
+        <pre id="output"></pre>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
